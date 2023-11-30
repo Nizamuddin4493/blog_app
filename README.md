@@ -65,14 +65,6 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- [Live Demo Link](https://google.com)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -112,17 +104,6 @@ To run tests, run the following command:
 ```sh
   bin/rails test test/models/article_test.rb
 ```
-
-### Deployment
-
-You can deploy this project using:
-
-```sh
-  blog_app
-```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
@@ -139,9 +120,9 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **To make it user friendly**
-- **Using React as front-End**
-- **Make it available for all**
+- **To make a Mobile version**
+- **Connect with AI tools**
+- **Provide technological Education tools**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
