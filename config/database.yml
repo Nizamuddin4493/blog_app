@@ -1,0 +1,22 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: blog_app_development
+  pool: 5
+  host: localhost
+  username: postgres
+  password: 123456789
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: blog_app_test
+  pool: 5
+  username: postgres
+  password: 123456789
+
+staging:
+  url: <%= ENV['DATABASE_URL'] %>
+
+production:
+  url: <%= ENV['DATABASE_URL'] %>
