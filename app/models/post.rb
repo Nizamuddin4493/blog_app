@@ -1,8 +1,8 @@
 class Post < ApplicationRecord
   has_many :likes
   has_many :comments, dependent: :destroy
-  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
-
+  belongs_to :author, class_name: 'User'
+  
   after_save :update_user_posts_counter
 
   def recent_comments(limit = 5)
