@@ -16,4 +16,11 @@ RSpec.describe Like, type: :model do
       expect(like).to_not be_valid
     end
   end
+
+  describe '#update_likes_counter' do
+    it 'updates the post\'s likes_counter' do
+      create(:like, post: post, user: user)
+      expect { create(:like, post: post, user: user) }.to change { post.reload.likes_counter }.by(1)
+    end
+  end
 end

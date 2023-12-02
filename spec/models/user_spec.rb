@@ -18,4 +18,18 @@ RSpec.describe User, type: :model do
   it 'user should be valid' do
     expect(user).to be_valid
   end
+
+  describe '#three_most_recent_posts' do
+    let(:user) { create(:user) }
+    let!(:old_post) { create(:post, author: user, created_at: 1.year.ago, text: 'Sample content') }
+
+    let!(:recent_posts) { create_list(:post, 3, author: user, created_at: Time.now) }
+
+    it 'returns the three most recent posts' do
+      expected_posts = recent_posts.sort_by(&:created_at).reverse.map(&:to_json)
+      actual_posts = user.three_most_recent_posts.to_a.sort_by(&:created_at).reverse.map(&:to_json)
+
+      expect(actual_posts).to eq(expected_posts)
+    end
+  end
 end
