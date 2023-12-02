@@ -19,8 +19,8 @@ RSpec.describe Like, type: :model do
 
   describe '#update_likes_counter' do
     it 'updates the post\'s likes_counter' do
-      create(:like, post: post, user: user)
-      expect { create(:like, post: post, user: user) }.to change { post.reload.likes_counter }.by(1)
+      create(:like, post:, user:)
+      expect { create(:like, post:, user:) }.to change { post.reload.likes_counter }.by(1)
     end
   end
 end
