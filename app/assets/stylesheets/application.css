@@ -14,7 +14,7 @@ body {
 .profile {
   display: flex;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #fff;
   border: 1px solid #000;
   padding: 10px;
 }
