@@ -1,12 +1,14 @@
 <% @users.each do |user| %>
 <div class="container">
-    <div class="profile" id="profile-template">
-    
-        <div ><%= image_tag user.photo, alt: "User Photo", class: "avatar-placeholder"%></div>
+    <div class="img-profile">
+      <div ><%= image_tag user.photo, alt: "User Photo", class: "img"%></div>
+    </div>
+
+    <div class="profile">
         <div class="profile-info">
-            <h2 class="user-name"><%= link_to user.name, user_path(user)%></h2>
-            <p class="user-posts"><%= user.posts.count %></p>
+          <h2 class="user-name"><%= link_to user.name, user_path(user)%></h2>
         </div>
+        <p class="user-posts"> Number of Posts: <b><%= user.posts.count %></b></p>
     </div>
 </div>
 <% end %>

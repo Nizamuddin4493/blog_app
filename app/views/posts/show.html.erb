@@ -1,16 +1,14 @@
-<div class="container">
+<div class="post-container">
     <div class="profile" id="profile-template">
         <div class="profile-info">
-            <h2 class="user-name"><%= @post.title %></h2>
+            <h2 class="user-name">Post # <%= @post.id %> by <%= @user.name %></h2>
             <p>
               <p><%= @post.text %></p>
-              <p class="count">Comments: <%= @post.comments.count %> | Likes: <%= @post.likes.count %></p>
+              <p class="count user-posts-up">Comments: <%= @post.comments.count %> | Likes: <%= @post.likes.count %></p>
             </p>
         </div>
     </div>
-</div>
 
-<div class="container">
     <div class="profile" id="profile-template">
       <% @post.comments.each do |comment| %>
         <div class="profile-info">

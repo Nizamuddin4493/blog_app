@@ -1,6 +1,6 @@
 <div class="container">
-    <div class="profile" id="profile-template">
-        <div><%= image_tag @user.photo, alt: "User Photo",  class: "avatar-placeholder" %></div>
+<div class="img-profile"><%= image_tag @user.photo, alt: "User Photo",  class: "img" %></div>
+    <div class="profile">
         <div class="profile-info">
             <h2 class="user-name"><%= link_to @user.name, user_path(@user) %></h2>
             <p class="user-posts">Number of posts: <%= @user.posts.count %></p>
@@ -8,20 +8,17 @@
     </div>
 </div>
 
-<% @posts.limit(2).each do |post| %>
-<div class="container">
-    <div class="profile" id="profile-template">
+<% @posts.limit(2).each do |post, index| %>
+<div class="post-container">
+    <div class="profile">
         <div class="profile-info">
-            <h2 class="user-name">Posts</h2>
+            <h2 class="user-name">Posts </h2>
             <p><%= post.text %></p>
-            <p class="count">Comments: <%= post.comments.count %> | Likes: <%= post.likes.count %></p>
+            <p class="count user-posts">Comments: <%= post.comments.count %> | Likes: <%= post.likes.count %></p>
         </div>
     </div>
-</div>
-
-<div class="container">
-    <div class="profile" id="profile-template">
-        <div class="profile-info">
+    <div class="profile">
+    <div class="profile-info">
           <% post.recent_comments.each do |comment| %>
             <p><%= link_to comment.user.name, user_path(comment.user) %>: <%= comment.text %></p>
           <% end %>
@@ -29,4 +26,4 @@
     </div>
 </div>
 <% end %>
-<%= link_to 'Pagination', user_posts_path(@user), class: 'button' %>
+<button class="pagination-button"><%= link_to 'Pagination', user_posts_path(@user), class: 'button' %> </button>

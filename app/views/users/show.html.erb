@@ -1,18 +1,18 @@
 
 <div class="container">
-    <div class="profile" id="profile-template">
-        <div>
-          <%= image_tag @user.photo, alt: "User Photo", class: "avatar-placeholder" %>
-        </div>
+    <div class="img-profile">
+        <%= image_tag @user.photo, alt: "User Photo", class: "img" %>
+    </div>
+    <div class="profile">
         <div class="profile-info">
             <h2 class="user-name"><%= @user.name%></h2>
-            <p class="user-posts"><%= @user.posts.count %></p>
+            <p class="user-posts"> Number of Posts: <b><%= @user.posts.count %></b></p>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <div class="profile" id="profile-template">
+    <div class="bio-profile">
         <div class="profile-info">
             <h2 class="user-name">Bio</h2>
             <p><%= @user.bio %></p>
@@ -22,14 +22,16 @@
 
 <% @user.recent_posts.each_with_index do |post, index|  %>
 <div class="container">
-    <div class="profile" id="profile-template">
+    <div class="bio-profile">
         <div class="profile-info">
             <h2 class="user-name">Posts <%= index+1 %>: <%= link_to post.title, user_post_path(@user, post) %></h2>
             <p><%= post.title %></p>
-            <p>Comments: <%= post.comments.count %> | Likes: <%= post.likes.count %></p>
+            <p class="user-posts">Comments: <%= post.comments.count %> | Likes: <%= post.likes.count %></p>
         </div>
     </div>
 </div>
 <% end %>
-<%= link_to "See all post", user_post_path(@user), class: 'button' %>
+<button class="pagination-button"><%= link_to "See all post", user_post_path(@user), class: 'button' %></button>
+
+
 
