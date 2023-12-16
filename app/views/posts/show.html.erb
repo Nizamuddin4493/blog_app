@@ -1,3 +1,19 @@
-<p>Details of one post will be displayed here</p>
-<p>For posts controller testing</p>
+<div class="post-container">
+    <div class="profile" id="profile-template">
+        <div class="profile-info">
+            <h2 class="user-name">Post # <%= @post.id %> by <%= @user.name %></h2>
+            <p>
+              <p><%= @post.text %></p>
+              <p class="count user-posts-up">Comments: <%= @post.comments.count %> | Likes: <%= @post.likes.count %></p>
+            </p>
+        </div>
+    </div>
 
+    <div class="profile" id="profile-template">
+      <% @post.comments.each do |comment| %>
+        <div class="profile-info">
+          <p><%= comment.user.name %>: <%= comment.text %></p>
+        </div>
+        <% end %>
+    </div>
+</div>

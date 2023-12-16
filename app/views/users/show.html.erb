@@ -1,3 +1,37 @@
-<h1>Details about one user will be displayed here</h1>
-<p>This is the page for displaying user info</p>
+
+<div class="container">
+    <div class="img-profile">
+        <%= image_tag @user.photo, alt: "User Photo", class: "img" %>
+    </div>
+    <div class="profile">
+        <div class="profile-info">
+            <h2 class="user-name"><%= @user.name%></h2>
+            <p class="user-posts"> Number of Posts: <b><%= @user.posts.count %></b></p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="bio-profile">
+        <div class="profile-info">
+            <h2 class="user-name">Bio</h2>
+            <p><%= @user.bio %></p>
+        </div>
+    </div>
+</div>
+
+<% @user.recent_posts.each_with_index do |post, index|  %>
+<div class="container">
+    <div class="bio-profile">
+        <div class="profile-info">
+            <h2 class="user-name">Posts <%= index+1 %>: <%= link_to post.title, user_post_path(@user, post) %></h2>
+            <p><%= post.title %></p>
+            <p class="user-posts">Comments: <%= post.comments.count %> | Likes: <%= post.likes.count %></p>
+        </div>
+    </div>
+</div>
+<% end %>
+<button class="pagination-button"><%= link_to "See all post", user_post_path(@user), class: 'button' %></button>
+
+
 
