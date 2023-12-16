@@ -1,15 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #000;
+  padding: 10px;
+  /* margin-bottom: 10px; */
+}
+
+.avatar-placeholder {
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
+  margin-right: 15px;
+}
+
+.profile-info {
+  flex-grow: 1;
+}
+
+.user-name {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.user-posts {
+  margin: 0;
+}
+
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+.main-profile {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header h1 {
+  margin: 0;
+  font-size: 24px;
+  border: 1px solid gray; 
+}
+
+.profile-header p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.profile-bio h2 {
+  margin: 10px 0;
+}
+
+.post {
+  margin-top: 20px;
+}
+
+.post h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.see-all-posts {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  color: #007bff;
+  text-decoration: none;
+}
+*/

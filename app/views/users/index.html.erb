@@ -1,3 +1,12 @@
-<h1>List of all users</h1>
-<p>This is a placeholder txt to test the users controller</p>
-
+<% @users.each do |user| %>
+<div class="container">
+    <div class="profile" id="profile-template">
+    
+        <div ><%= image_tag user.photo, alt: "User Photo", class: "avatar-placeholder"%></div>
+        <div class="profile-info">
+            <h2 class="user-name"><%= link_to user.name, user_path(user)%></h2>
+            <p class="user-posts"><%= user.posts.count %></p>
+        </div>
+    </div>
+</div>
+<% end %>
