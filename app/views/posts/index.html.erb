@@ -20,7 +20,7 @@
     <div class="profile">
     <div class="profile-info">
           <% post.recent_comments.each do |comment| %>
-            <p><%= link_to comment.user.name, user_path(comment.user) %>: <%= comment.text %></p>
+            <p><%= link_to comment.user.name, user_path(comment.user)  if comment.user.present? %>: <%= comment.text %></p>
           <% end %>
         </div>
     </div>
