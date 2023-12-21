@@ -25,8 +25,8 @@ class CommentsController < ApplicationController
   end
 
   def set_user_and_post
-    @user = User.find(params[:user_id])
-    @post = @user.posts.find(params[:post_id])
+    @user = User.includes(posts: :comments).find(params[:user_id])
+    @post = @user.includes(:comments).posts.find(params[:post_id])
   end
 
   def store_referer
